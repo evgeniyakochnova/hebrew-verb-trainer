@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Hebrew Verb Trainer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Hebrew Verb Trainer</div>
+    <div class="meta">
+      <div class="progressWrap" aria-label="Session progress">
+        <div id="progressBar" class="progressBar"></div>
+      </div>
+      <div class="scorePill" id="score" aria-label="Score">Score: 0/0</div>
+      <button id="resetBtn" class="ghost" type="button">Reset</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card" id="quizCard">
+      <div class="row">
+        <div class="pill" id="modePill">…</div>
+        <div class="pill binyanPill" id="binyanPill"></div>
+      </div>
+
+      <h1 class="prompt" id="prompt">Loading…</h1>
+
+      <div id="subprompt" class="subprompt"></div>
+
+      <div class="answerArea">
+        <div id="mcq" class="mcq hidden"></div>
+      </div>
+
+      <div id="feedback" class="feedback hidden"></div>
+
+      <div class="actions">
+        <button id="nextBtn" class="primary hidden" type="button">Next</button>
+        <button id="showBtn" class="ghost hidden" type="button">Show answer</button>
+        <button id="finishBtn" class="ghost" type="button">Finish and Show Results</button>
+        
+        
+<button id="knownBtn" class="ghost hidden" type="button">Mark as known (hide this session)</button>
+      </div>
+
+      
+<div class="settingsBar" aria-label="Exercise types">
+  <div class="settingsTitle">Exercises</div>
+  <label class="toggle"><input type="checkbox" id="toggleEnHe" checked><span>EN → HE</span></label>
+  <label class="toggle"><input type="checkbox" id="toggleHeEn" checked><span>HE → EN</span></label>
+  <label class="toggle"><input type="checkbox" id="toggleFuture" checked><span>Future</span></label>
+  <label class="toggle"><input type="checkbox" id="togglePast" checked><span>Past</span></label>
+</div>
+
+<div class="settingsBar" aria-label="Binyan filter">
+  <div class="settingsTitle">Binyanim</div>
+  <label class="toggle"><input type="checkbox" id="togglePaal" checked><span>Paal</span></label>
+  <label class="toggle"><input type="checkbox" id="togglePiel" checked><span>Piel</span></label>
+  <label class="toggle"><input type="checkbox" id="toggleHifil" checked><span>Hifil</span></label>
+  <label class="toggle"><input type="checkbox" id="toggleHitpael" checked><span>Hitpael</span></label>
+  <label class="toggle"><input type="checkbox" id="toggleNifal" checked><span>Nifal</span></label>
+</div>
+
+    </section>
+  
+      <div id="resultsOverlay" class="overlay hidden" role="dialog" aria-modal="true" aria-label="Results">
+        <div class="resultsCard">
+          <div class="resultsHeb rtl">כל הכבוד!</div>
+          <div class="resultsLine" id="resultsScore">Score: 0/0</div>
+          <div class="resultsLine" id="resultsAcc">Accuracy: 0%</div>
+          <div class="resultsActions">
+            <button id="shareResultsBtn" class="btn" type="button">Share</button>
+            <button id="closeResultsBtn" class="btn primary" type="button">Back</button>
+          </div>
+        </div>
+      </div>
+
+</main>
+
+  <script src="app.js" defer></script>
+  <div id="toast" class="toast hidden" role="status" aria-live="polite">Copied</div>
+</body>
+</html>
